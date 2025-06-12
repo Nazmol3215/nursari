@@ -1,5 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollToTopButton from "./components/shred/ScrollToTopButton";
+import MarqueeBanner from "./components/marqueeBanner";
+import Home from "./components/productGridTwo";
+import NavScrollExample from "./components/NavScrollExample";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ImageCard from "./components/ImageCard";
+import ProductCards from "./components/ProductCards";
+import ProductGrid from "./components/ProductGrid";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +31,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+
+          
         {children}
+<NavScrollExample />
+  <ScrollToTopButton />
+  <MarqueeBanner />
+<ImageCard/>
+<Home/>
+<ProductCards/>
+<ProductGrid/>
       </body>
     </html>
   );

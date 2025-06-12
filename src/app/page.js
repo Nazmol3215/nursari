@@ -1,95 +1,95 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import Link from 'next/link';
+import React from 'react';
+import { usePathname } from 'next/navigation';
+
+const navItems = [
+  { href: '/', label: 'হোম' },
+  { href: '/products', label: 'গাছসমূহ' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/offers', label: 'অফার' },
+  { href: '/services', label: 'সেবা' },
+  { href: '/contact', label: 'যোগাযোগ' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+];
+
+const Navbar = () => {
+  const pathname = usePathname(); // active link স্টাইল করার জন্য
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <nav style={styles.nav}>
+      <div style={styles.logo}>🌿 লটকন নার্সারী</div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <div style={styles.scrollContainer}>
+        <div style={styles.navLinks}>
+          {navItems.map((item, index) => (
+            <Link key={index} href={item.href} passHref>
+              <span
+                style={{
+                  ...styles.link,
+                  backgroundColor: pathname === item.href ? '#4caf50' : '#2e7d32',
+                }}
+              >
+                {item.label}
+              </span>
+            </Link>
+          ))}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </nav>
   );
-}
+}; 
+
+const styles = {
+  nav: {
+    backgroundColor: '#1e3932',
+    color: '#fff',
+    padding: '12px 16px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    position: 'sticky',
+    top: 0,
+    zIndex: 999,
+  },
+  logo: {
+    fontWeight: 'bold',
+    fontSize: '18px',
+    color: '#ffeb3b',
+    textAlign: 'center',
+  },
+  scrollContainer: {
+    overflowX: 'auto',
+    direction: 'rtl',
+    WebkitOverflowScrolling: 'touch',
+  },
+  navLinks: {
+    display: 'inline-flex',
+    flexDirection: 'row-reverse',
+    gap: '12px',
+    padding: '8px 4px',
+    direction: 'ltr',
+  },
+  link: {
+    padding: '8px 16px',
+    backgroundColor: '#2e7d32',
+    borderRadius: '20px',
+    color: '#fff',
+    whiteSpace: 'nowrap',
+    fontSize: '15px',
+    transition: 'background 0.3s',
+    cursor: 'pointer',
+  },
+};
+
+export default Navbar;
