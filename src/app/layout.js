@@ -3,15 +3,12 @@ import "./globals.css";
 import ScrollToTopButton from "./components/shred/ScrollToTopButton";
 import MarqueeBanner from "./components/marqueeBanner";
 import Home from "./components/productGridTwo";
-import NavScrollExample from "./components/NavScrollExample";
+// import NavScrollExample from "./components/NavScrollExample";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageCard from "./components/ImageCard";
 import ProductCards from "./components/ProductCards";
 import ProductGrid from "./components/ProductGrid";
-
-
-
-
+import Footer from "./components/shred/footer"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,17 +27,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+  <head>
+        {/* FontAwesome CDN */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9x5WbM6r0Hkn7Gc4jJ7R8F3eH45SFTJ2pW7XYtND+i+M8lw1Ym6Y5qlhk6Vd/w8eA=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
+
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
-          
         {children}
-<NavScrollExample />
+{/* <NavScrollExample /> */}
   <ScrollToTopButton />
   <MarqueeBanner />
 <ImageCard/>
 <Home/>
 <ProductCards/>
 <ProductGrid/>
+
+<Footer/>
       </body>
     </html>
   );

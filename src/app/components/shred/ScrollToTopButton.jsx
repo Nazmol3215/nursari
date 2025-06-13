@@ -1,60 +1,55 @@
-'use client'; // যদি আপনি Next.js App Router ব্যবহার করেন
-import React, { useState, useEffect } from 'react';
+// components/ScrollToTopButton.js
+"use client";
+import { useEffect, useState } from "react";
 const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
 
+  // স্ক্রল অবস্থান অনুযায়ী বাটনের ভিজিবিলিটি ঠিক করা
   useEffect(() => {
-    // Check if window is defined to ensure client-side execution
-    if (typeof window === 'undefined') return;
-
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
+      if (window.scrollY > 300) {
+        setVisible(true);
       } else {
-        setIsVisible(false);
+        setVisible(false);
       }
     };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  // স্ক্রল টু টপ ফাংশন
   const scrollToTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          style={{
-            position: 'fixed',
-            bottom: '1rem',
-            right: '1.2rem',
-            padding: '1.3rem',
-            fontSize: '1.rem',
-            borderRadius: '100%',
-            backgroundColor: '#3F9E53',
-            color: '#fff',
-            border: 'none',
-            cursor: 'pointer',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-            zIndex: '9',
-          }}
-        >
-          ↑
-        </button>
-      )}
-    </div>
+    visible && (
+      <button
+        onClick={scrollToTop}
+        aria-label="Scroll to Top"
+        style={{
+          position: "fixed",
+          bottom: "30px",
+          right: "20px",
+          backgroundColor: "#2e7d32",
+          color: "white",
+          border: "none",
+          borderRadius: "50%",
+          width: "45px",
+          height: "45px",
+          fontSize: "20px",
+          cursor: "pointer",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+          zIndex: 1000,
+          transition: "0.3s",
+        }}
+      >
+        ↑
+      </button>
+    )
   );
 };
 
