@@ -6,21 +6,17 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
   { href: '/', label: 'হোম' },
-  { href: '/products', label: 'গাছসমূহ' },
-  { href: '/offers', label: 'অফার' },
-  { href: '/offers', label: 'অফার' },
-  { href: '/offers', label: 'অফার' },
-  { href: '/offers', label: 'অফার' },
-  { href: '/offers', label: 'অফার' },
+  { href: '/products', label: 'চারাগুলি' },
+  { href: '/offers', label: 'আম চারা' },
+  { href: '/offers', label: 'পেয়ারা চারা ' },
+  { href: '/offers', label: 'লটকন চারা' },
+  { href: '/offers', label: 'লিচু চারা' },
+  { href: '/offers', label: 'পরামর্শ' },
   { href: '/offers', label: 'অফার' },
   { href: '/services', label: 'সেবা' },
   { href: '/contact', label: 'যোগাযোগ' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
-  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/about', label: 'রিভিউ' },
+  { href: '/about', label: 'সাধারণ প্রশ্ন' },
 ];
 
 const Navbar = () => {

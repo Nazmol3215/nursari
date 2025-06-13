@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "./components/shred/ScrollToTopButton";
 // import MarqueeBanner from "./components/MarqueeBanner";
-import ProductGridTwo from "./components/ProductGridTwo";
+// import ProductGridTwo from "./components/ProductGridTwo";
 // import NavScrollExample from "./components/NavScrollExample";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageCard from "./components/ImageCard";
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
   {/* <MarqueeBanner /> */}
 <ImageCard/>
 {/* <Home/> */}
-<ProductGridTwo/>
+{/* <ProductGridTwo/> */}
 <ProductCards/>
 <ProductGrid/>
 <Footer/>
