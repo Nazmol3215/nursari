@@ -77,9 +77,10 @@ const ImageCard = ({ imgSrc, title, description, price }) => {
         )}
       </div>
       <div style={{ padding: '10px' }}>
-        <h3>{title} লটকন চারা</h3>
-        <p>{description} অনেক সুস্বাদু</p>
-        <p style={{ fontWeight: 'bold', color: 'green' }}>মূল্য: {price} টাকা</p>
+        <h3>{title} লটকন গাছের উন্নত জাতের চারা - দ্রুত ফলনশীল </h3>
+        <p>{description} বাড়ির আঙিনায় বা বাগানে লাগানোর উপযোগী উন্নত জাতের লটকন গাছের চারা। দ্রুত ফল দেয় এবং 
+          যত্নে বাড়ে। দেশি মাটির উপযোগী এই চারাগুলি সহজেই বৃদ্ধি পায় ও কম সময়ে ফল দেয়। </p>
+        <p style={{ fontWeight: 'bold', color: 'green' }}>মূল্য: {price} প্রতি চারা – ৭০ টাকা</p>
       </div>
     </div>
   );

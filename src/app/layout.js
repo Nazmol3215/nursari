@@ -1,14 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "./components/shred/ScrollToTopButton";
-import MarqueeBanner from "./components/MarqueeBanner";
-import Home from "./components/ProductGridTwo";
+// import MarqueeBanner from "./components/MarqueeBanner";
+import ProductGridTwo from "./components/ProductGridTwo";
 // import NavScrollExample from "./components/NavScrollExample";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageCard from "./components/ImageCard";
 import ProductCards from "./components/ProductCards";
 import ProductGrid from "./components/ProductGrid";
-import Footer from "./components/shred/Footer"
+import Footer from "./components/shred/Footer";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,12 +45,12 @@ export default function RootLayout({ children }) {
         {children}
 {/* <NavScrollExample /> */}
   <ScrollToTopButton />
-  <MarqueeBanner />
+  {/* <MarqueeBanner /> */}
 <ImageCard/>
-<Home/>
+{/* <Home/> */}
+<ProductGridTwo/>
 <ProductCards/>
 <ProductGrid/>
-
 <Footer/>
       </body>
     </html>

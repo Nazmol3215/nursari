@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 const products = [
   {
-    id: 1,
+    id: 1,    
     title: 'The Dark Side Unisex Softstyle T-Shirt',
     price: 20,
     image: '/images/hodanazmol.png',
