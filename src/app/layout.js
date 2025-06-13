@@ -1,19 +1,19 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "./components/shred/ScrollToTopButton";
-import MarqueeBanner from "./components/marqueeBanner";
-import Home from "./components/productGridTwo";
+import MarqueeBanner from "./components/MarqueeBanner";
+import Home from "./components/ProductGridTwo";
 // import NavScrollExample from "./components/NavScrollExample";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageCard from "./components/ImageCard";
 import ProductCards from "./components/ProductCards";
 import ProductGrid from "./components/ProductGrid";
-import Footer from "./components/shred/footer"
+import Footer from "./components/shred/Footer"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
+   
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
